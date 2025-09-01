@@ -52,11 +52,14 @@ public class StandardHotStoneGame implements Game {
     private Map<Player, List <Card>> hands = new HashMap<>();
 
     public StandardHotStoneGame(){
-        hands.put(Player.FINDUS, Arrays.asList(
-            new StandardCard(GameConstants.TRES_CARD),
-            new StandardCard(GameConstants.DOS_CARD),
-            new StandardCard(GameConstants.UNO_CARD)
-        ));
+        // Because Player enum - for loop like following
+        for (Player p : Player.values()) {
+            hands.put(p, Arrays.asList(
+                    new StandardCard(GameConstants.TRES_CARD),
+                    new StandardCard(GameConstants.DOS_CARD),
+                    new StandardCard(GameConstants.UNO_CARD)
+            ));
+        }
     }
 
   @Override

@@ -113,5 +113,29 @@ public class TestAlphaStone {
       assertThat(card2.getName(), is(GameConstants.UNO_CARD));
   }
 
+    @Test
+    public void shouldHaveUnoDosTresCardsInitiallyForPeddersen() {
+        // Given a game, PEDDERSEN has 3 cards in hand
+        int count = game.getHandSize(Player.PEDDERSEN);
+        assertThat(count, is(3));
+        // And these are ordered Tres, Dos, Uno in slot 0,1,2
+
+        // When I pick card 0
+        Card card0 = game.getCardInHand(Player.PEDDERSEN, 0);
+        // Then is it Tres
+        // ENABLE TO START TDD'ing
+        assertThat(card0.getName(), is(GameConstants.TRES_CARD));
+
+        // When I pick card 1
+        Card card1 = game.getCardInHand(Player.PEDDERSEN, 1);
+        // Then is it Dos
+        assertThat(card1.getName(), is(GameConstants.DOS_CARD));
+
+        // When I pick card 2
+        Card card2 = game.getCardInHand(Player.PEDDERSEN, 2);
+        // Then is it Dos
+        assertThat(card2.getName(), is(GameConstants.UNO_CARD));
+    }
+
 
 }
