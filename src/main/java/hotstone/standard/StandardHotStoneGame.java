@@ -19,10 +19,7 @@ package hotstone.standard;
 
 import hotstone.framework.*;
 
-import java.util.Map;
-import java.util.List;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.util.*;
 
 /** This is the 'temporary test stub' in TDD
  * terms: the initial empty but compilable implementation
@@ -52,13 +49,14 @@ public class StandardHotStoneGame implements Game {
     private Map<Player, List <Card>> hands = new HashMap<>();
 
     public StandardHotStoneGame(){
+
         // Because Player enum - for loop like following
         for (Player p : Player.values()) {
-            hands.put(p, Arrays.asList(
-                    new StandardCard(GameConstants.TRES_CARD),
-                    new StandardCard(GameConstants.DOS_CARD),
-                    new StandardCard(GameConstants.UNO_CARD)
-            ));
+            List<Card> playerHand = new ArrayList<>();
+            playerHand.add(new StandardCard(GameConstants.TRES_CARD));
+            playerHand.add(new StandardCard(GameConstants.DOS_CARD));
+            playerHand.add(new StandardCard(GameConstants.UNO_CARD));
+            hands.put(p, playerHand);
         }
     }
 

@@ -2,7 +2,7 @@ Testlist for AlphaStone
 ====
 
 * [OK] Given an initialized game, Then Findus is player in turn
-* When Findus ends its turn, Then it is Peddersen in turn
+* [] When Findus ends its turn, Then it is Peddersen in turn
 * [OK] When game starts Then Findus should have three cards in hand, Tres at index 0, Dos at index 1, and Uno at index 2.
   * [OK] Has three cards
   * [OK] return "Tres" when getCardInHand is called with Findus at index 0

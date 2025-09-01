@@ -137,5 +137,10 @@ public class TestAlphaStone {
         assertThat(card2.getName(), is(GameConstants.UNO_CARD));
     }
 
+    @Test
+    public void shouldBePeddersenTurnWhenFindusEndTurn() {
+        // Given a game
+
+    }
 
 }
