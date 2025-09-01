@@ -45,7 +45,7 @@ import java.util.*;
 
 public class StandardHotStoneGame implements Game {
 
-
+    private int turnNumber = 0;
     private Map<Player, List <Card>> hands = new HashMap<>();
 
     public StandardHotStoneGame(){
@@ -62,8 +62,13 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Player getPlayerInTurn() {
-    return Player.FINDUS;
-  } // Fake-it
+        // If turnNumber % 2 == 0 then return FINDUS else PEDDERSEN
+      if (turnNumber % 2 == 0) {
+          return Player.FINDUS;
+      } else {
+          return Player.PEDDERSEN;
+      }
+  }
 
   @Override
   public Hero getHero(Player who) {
@@ -77,7 +82,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public int getTurnNumber() {
-    return 0;
+    return turnNumber;
   }
 
   @Override
@@ -119,7 +124,9 @@ public class StandardHotStoneGame implements Game {
   }
 
   @Override
-  public void endTurn() { }
+  public void endTurn() {
+        turnNumber += 1;
+  }
 
   @Override
   public Status playCard(Player who, Card card, int atIndex) {

@@ -139,8 +139,11 @@ public class TestAlphaStone {
 
     @Test
     public void shouldBePeddersenTurnWhenFindusEndTurn() {
-        // Given a game
-
+        // Given a game where Findus has turn. Turn of 0
+        // When Findus ends his turn
+        game.endTurn();
+        // Then it is Peddersen's turn
+        assertThat(game.getPlayerInTurn(), is(Player.PEDDERSEN));
     }
 
 }
