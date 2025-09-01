@@ -97,10 +97,21 @@ public class TestAlphaStone {
     // And these are ordered Tres, Dos, Uno in slot 0,1,2
 
     // When I pick card 0
-    Card card = game.getCardInHand(Player.FINDUS, 0);
+    Card card0 = game.getCardInHand(Player.FINDUS, 0);
     // Then is it Tres
     // ENABLE TO START TDD'ing
-    assertThat(card.getName(), is(GameConstants.TRES_CARD));
+    assertThat(card0.getName(), is(GameConstants.TRES_CARD));
+
+    // When I pick card 1
+      Card card1 = game.getCardInHand(Player.FINDUS, 1);
+      // Then is it Dos
+      assertThat(card1.getName(), is(GameConstants.DOS_CARD));
+
+      // When I pick card 2
+      Card card2 = game.getCardInHand(Player.FINDUS, 2);
+      // Then is it Dos
+      assertThat(card2.getName(), is(GameConstants.UNO_CARD));
   }
+
 
 }

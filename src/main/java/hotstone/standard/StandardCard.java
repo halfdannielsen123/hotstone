@@ -6,10 +6,15 @@ import hotstone.framework.Player;
 
 public class StandardCard implements Card {
 
+    private String name;
+
+    public StandardCard(String name){
+        this.name = name;
+    }
 
     @Override
     public String getName() {
-        return GameConstants.TRES_CARD;
+        return name;
     }
 
     @Override

@@ -19,6 +19,11 @@ package hotstone.standard;
 
 import hotstone.framework.*;
 
+import java.util.Map;
+import java.util.List;
+import java.util.Arrays;
+import java.util.HashMap;
+
 /** This is the 'temporary test stub' in TDD
  * terms: the initial empty but compilable implementation
  * of the game interface.
@@ -42,6 +47,18 @@ import hotstone.framework.*;
  */
 
 public class StandardHotStoneGame implements Game {
+
+
+    private Map<Player, List <Card>> hands = new HashMap<>();
+
+    public StandardHotStoneGame(){
+        hands.put(Player.FINDUS, Arrays.asList(
+            new StandardCard(GameConstants.TRES_CARD),
+            new StandardCard(GameConstants.DOS_CARD),
+            new StandardCard(GameConstants.UNO_CARD)
+        ));
+    }
+
   @Override
   public Player getPlayerInTurn() {
     return Player.FINDUS;
@@ -67,14 +84,13 @@ public class StandardHotStoneGame implements Game {
     return 0;
   }
 
+
+
   @Override
   public Card getCardInHand(Player who, int indexInHand) {
-      if (who == Player.FINDUS && indexInHand == 0) {
-          return new StandardCard();
-      }
-      return null; // placeholder until more tests force us to expand
+      List<Card> hand = hands.get(who);
+      return hand.get(indexInHand);
   }
-
 
     @Override
   public Iterable<? extends Card> getHand(Player who) {
