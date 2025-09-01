@@ -69,10 +69,14 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Card getCardInHand(Player who, int indexInHand) {
-    return null;
+      if (who == Player.FINDUS && indexInHand == 0) {
+          return new StandardCard();
+      }
+      return null; // placeholder until more tests force us to expand
   }
 
-  @Override
+
+    @Override
   public Iterable<? extends Card> getHand(Player who) {
     return null;
   }
