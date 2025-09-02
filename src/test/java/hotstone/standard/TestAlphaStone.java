@@ -213,6 +213,16 @@ public class TestAlphaStone {
         // Then the card should be removed from Findus' hand
         assertThat(game.getHandSize(Player.FINDUS), is(2));
     }
+
+    @Test
+    public void shouldMoveDosFromIndex0To1WhenUnoInsertedAtIndex0 () {
+        Card cardUno = game.getCardInHand(Player.FINDUS, 2);
+        game.playCard(Player.FINDUS, cardUno, 0);
+        Card cardDos = game.getCardInHand(Player.FINDUS, 1);
+        game.playCard(Player.FINDUS, cardDos, 0);
+        assertThat(game.getCardInField(Player.FINDUS, 0), is(cardDos));
+        assertThat(game.getCardInField(Player.FINDUS, 1), is(cardUno));
+    }
 }
 
 

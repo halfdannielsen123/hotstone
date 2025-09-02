@@ -31,13 +31,13 @@ Mana:
 * When Peddersen plays Dos, Then the mana available is two less.
 * When Findus plays his power, his mana should drop two
 * When Findus plays Uno in round 0, in beginning of round 2, he should have 3 mana
-* Findus should have 3 mana in the beginning of round 1-4.
+* []Findus should have 3 mana in the beginning of round 1-4.
 
 Playing cards:
 * [OK] Given a game When Findus plays Uno at index 0, Then it is allowed (Status.OK), and Then minion Uno appears at index 0 on the player's own field.
 * [OK] Given a game When Findus plays Uno at index 0, then it should be removed from Findus' hand at handSize should be 2.
-
-* []Given a game When Findus plays Uno at index 0, then Dos at index 0, Then it is allowed (Status.OK), and Then minion Dos appears at index 1 and Uno at index 1 on the player's own field.
+* [OK] Given a game When Findus plays Uno at index 0, then Dos at index 0 then Dos appears at index 0 and Uno moves to index 1 on the player's own field.
+* 
 * When Findus plays a card, then it becomes active after one round
 * When Findus plays a card, Then Peddersen still has 3 cards in his hand.
 * When Findus has played a card at index 0, and in next turn tries to play another card at index 0, then it is not allowed. He has to play it in another index on the table
