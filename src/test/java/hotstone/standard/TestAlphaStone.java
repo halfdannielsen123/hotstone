@@ -174,10 +174,20 @@ public class TestAlphaStone {
     }
 
     @Test
-    public void shouldReturn1Mana1Health1AttackWhenAskingForCardUnoAttributes() {
+    public void shouldReturn1ManaCost1Health1AttackWhenAskingForCardUnoAttributes() {
         Card cardUno = game.getCardInHand(Player.FINDUS, 2);
+        assertThat(cardUno.getName(), is("Uno"));
         assertThat(cardUno.getManaCost(), is(1));
         assertThat(cardUno.getAttack(), is(1));
         assertThat(cardUno.getHealth(), is(1));
+    }
+
+    @Test
+    public void shouldReturn2ManaCost2Health2AttackWhenAskingForCardUnoAttributes() {
+        Card cardDos = game.getCardInHand(Player.FINDUS, 1);
+        assertThat(cardDos.getName(), is("Dos"));
+        assertThat(cardDos.getManaCost(), is(2));
+        assertThat(cardDos.getAttack(), is(2));
+        assertThat(cardDos.getHealth(), is(2));
     }
 }

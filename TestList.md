@@ -17,7 +17,7 @@ Game initialization:
 
 Cards:
 * [OK] Given Card Uno Then it has attributes (1,1,1)
-* [] Given Card Dos Then it has attributes (2,2,2)
+* [OK] Given Card Dos Then it has attributes (2,2,2)
 
 Drawing:
 * Findus draws card Cuatro by beginning of round 2
