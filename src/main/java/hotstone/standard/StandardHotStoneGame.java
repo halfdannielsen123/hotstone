@@ -110,8 +110,9 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public int getHandSize(Player who) {
-    return 3;
-  } // FAKE-IT
+        List<Card> playerHand = hands.get(who);
+        return playerHand.size();
+  }
 
   @Override
   public Card getCardInField(Player who, int indexInField) {
@@ -136,8 +137,12 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Status playCard(Player who, Card card, int atIndex) {
+        // Add the card to the player's field
         List <Card> playerField = fields.get(who);
         playerField.add(atIndex, card);
+        // Remove the played card from the player's hand
+        List <Card> playerHand = hands.get(who);
+        playerHand.remove(card);
         return Status.OK;
   }
 

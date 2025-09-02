@@ -203,4 +203,17 @@ public class TestAlphaStone {
         // And the card should be found in the field at index 0
         assertThat(game.getCardInField(Player.FINDUS, 0), is(cardUno));
     }
+
+    @Test
+    public void shouldRemoveUnoFromFindusHandWhenUnoPlayed () {
+        // Given game started and cardUno in Findus' hand at index 2
+        Card cardUno = game.getCardInHand(Player.FINDUS, 2);
+        // When card Uno is played at index 0 the Status should be OK
+        assertThat(game.playCard(Player.FINDUS, cardUno, 0), is(Status.OK));
+        // Then the card should be removed from Findus' hand
+        assertThat(game.getHandSize(Player.FINDUS), is(2));
+    }
 }
+
+
+
