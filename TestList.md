@@ -61,11 +61,6 @@ What's missing(not finished test cases, just a brainstorm)
   then fielding C at the start (index 0) would leave the field like (C,A,B); if fielding C at
   index 1 would leave the field like (A,C,B); and if fielding C at the end (index 2) would
   result in a field (A,B,C)."
-* "If an attacking minion, A, attacks a defending minion, D, then D’s health is reduced
-  by the amount of A’s attack value. Similar, A’s health is reduced by the value of D’s
-  attack. If any of the minions’ health becomes 0 or less, the minion is defeated and the
-  minion is removed from the field. Note that the attack and counter attack happens at
-  the same time—the attacker does not leave the battle without a health loss even if the
-  defender is defeated by the attack."
+
 * End of game
   * Somebody dies
