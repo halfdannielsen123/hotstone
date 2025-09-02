@@ -32,6 +32,7 @@ package hotstone.standard;
 
 import hotstone.framework.Card;
 import hotstone.framework.Player;
+import hotstone.framework.Status;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
@@ -184,10 +185,22 @@ public class TestAlphaStone {
 
     @Test
     public void shouldReturn2ManaCost2Health2AttackWhenAskingForCardUnoAttributes() {
+        // Given a game where Findus has card Dos at indexInHand1
         Card cardDos = game.getCardInHand(Player.FINDUS, 1);
+        // When checking the attributes
         assertThat(cardDos.getName(), is("Dos"));
         assertThat(cardDos.getManaCost(), is(2));
         assertThat(cardDos.getAttack(), is(2));
         assertThat(cardDos.getHealth(), is(2));
+    }
+
+    @Test
+    public void shouldReturnOKAndCardBeFoundInFieldAtIndex0WhenFindusPlaysUnoAtIndex0InRound1() {
+        // Given game started and cardUno in Findus' hand at index 2
+        Card cardUno = game.getCardInHand(Player.FINDUS, 2);
+        // When card Uno is played at index 0 the Status should be OK
+        assertThat(game.playCard(Player.FINDUS, cardUno, 0), is(Status.OK));
+        // And the card should be found in the field at index 0
+        assertThat(game.getCardInField(Player.FINDUS, 0), is(cardUno));
     }
 }

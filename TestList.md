@@ -34,9 +34,10 @@ Mana:
 * Findus should have 3 mana in the beginning of round 1-4.
 
 Playing cards:
+* [OK]Given a game When Findus plays Uno at index 0, Then it is allowed (Status.OK), and Then minion Uno appears at index 0 on the player's own field.
+* []Given a game When Findus plays Uno at index 0, Then it is allowed (Status.OK), and Then minion Uno appears at index 0 on the player's own field.
 * When Findus plays a card, then it becomes active after one round
 * When Findus plays a card, Then Peddersen still has 3 cards in his hand.
-* Given a game When Findus plays Uno at index 0, Then it is allowed (Status.OK), and Then minion Uno appears at index 0 on the player's own field.
 * When Findus has played a card at index 0, and in next turn tries to play another card at index 0, then it is not allowed. He has to play it in another index on the table
 
 Attacks:

@@ -48,6 +48,7 @@ public class StandardHotStoneGame implements Game {
     private int turnNumber = 0;
     private Map<Player, List <Card>> hands = new HashMap<>();
     private Map <Player, Hero> heroes = new HashMap<>();
+    private Map <Player, List <Card>> fields = new HashMap<>();
 
     public StandardHotStoneGame(){
 
@@ -60,6 +61,7 @@ public class StandardHotStoneGame implements Game {
             hands.put(p, playerHand);
 
             heroes.put(p, new StandardHero());
+            fields.put(p, new ArrayList<>());
         }
     }
 
@@ -101,7 +103,7 @@ public class StandardHotStoneGame implements Game {
       return hand.get(indexInHand);
   }
 
-    @Override
+  @Override
   public Iterable<? extends Card> getHand(Player who) {
     return null;
   }
@@ -113,7 +115,8 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Card getCardInField(Player who, int indexInField) {
-    return null;
+      List <Card> playerField = fields.get(who);
+    return playerField.get(indexInField);
   }
 
   @Override
@@ -133,7 +136,9 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Status playCard(Player who, Card card, int atIndex) {
-    return null;
+        List <Card> playerField = fields.get(who);
+        playerField.add(atIndex, card);
+        return Status.OK;
   }
 
   @Override
