@@ -148,7 +148,7 @@ public class TestAlphaStone {
 
     @Test
     public void shouldBeBabyAsFindusHero(){
-        // Given a game
+        // Given a game where Findus
         // When asking for Findus' hero
         // Then it is baby
         assertThat(game.getHero(Player.FINDUS).getType(), is(GameConstants.BABY_HERO_TYPE));
@@ -162,4 +162,14 @@ public class TestAlphaStone {
         assertThat(game.getHero(Player.PEDDERSEN).getType(), is(GameConstants.BABY_HERO_TYPE));
     }
 
+    @Test
+    public void shouldReturn21WhenAskingForHeroHealth() {
+        assertThat(game.getHero(Player.FINDUS).getHealth(), is(21));
+        assertThat(game.getHero(Player.PEDDERSEN).getHealth(), is(21));
+    }
+
+    @Test
+    public void shouldReturnJustCuteWhenAskingForHeroEffectDescription() {
+        assertThat(game.getHero(Player.FINDUS).getEffectDescription(), is(GameConstants.BABY_HERO_EFFECT_DESCRIPTION));
+    }
 }

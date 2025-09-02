@@ -18,7 +18,7 @@ public class StandardHero implements Hero {
 
     @Override
     public int getHealth() {
-        return 0;
+        return 21;
     }
 
     @Override
@@ -38,6 +38,6 @@ public class StandardHero implements Hero {
 
     @Override
     public String getEffectDescription() {
-        return "";
+        return GameConstants.BABY_HERO_EFFECT_DESCRIPTION;
     }
 }

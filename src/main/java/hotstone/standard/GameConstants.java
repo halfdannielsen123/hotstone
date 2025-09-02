@@ -35,6 +35,7 @@ public class GameConstants {
 
   // The alpha variant's hero type
   public static final String BABY_HERO_TYPE = "Baby";
+  public static final String BABY_HERO_EFFECT_DESCRIPTION = "Just Cute";
 
   // The first variants use cooks/chefs as hero types from different nations
   public static final String THAI_CHEF_HERO_TYPE = "Bunyasaranand";

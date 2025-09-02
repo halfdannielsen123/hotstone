@@ -10,9 +10,8 @@ Game initialization:
   * [OK] return "Dos" / "Uno" then getCardInHand is called with Findus at index 1, 2, respectively.
 * [OK] When game starts Then Peddersen should have three cards in hand, Tres at index 0, Dos at index 1, and Uno at index 2.
 * [OK] When Findus ends his turn in turn 0, Then it is Peddersen in turn
-* When asking for Findus' hero description, it should return "Just Cute"
-* When asking for Findus' power, it should return "Cute"
-* Game starts with both heroes at 21 health
+* [OK] When asking for Findus' hero description, it should return "Just Cute"
+* [OK] Game starts with both heroes at 21 health
 * [OK]When game starts, Findus should have "Baby" as hero
 * [OK] When game starts, Peddersen should have "Baby" as hero
 
