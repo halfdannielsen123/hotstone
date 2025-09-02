@@ -21,6 +21,11 @@ public class StandardHero implements Hero {
     }
 
     @Override
+    public void deductMana(int manaCost) {
+        mana -= manaCost;
+    }
+
+    @Override
     public int getHealth() {
         return health;
     }

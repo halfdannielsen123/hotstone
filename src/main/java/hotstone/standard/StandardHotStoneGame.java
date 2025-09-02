@@ -143,6 +143,9 @@ public class StandardHotStoneGame implements Game {
         // Remove the played card from the player's hand
         List <Card> playerHand = hands.get(who);
         playerHand.remove(card);
+        // Deduct manaCost from Hero's mana
+        Hero playerHero = getHero(who);
+        playerHero.deductMana(card.getManaCost());
         return Status.OK;
   }
 

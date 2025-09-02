@@ -229,6 +229,13 @@ public class TestAlphaStone {
       assertThat(game.getHero(Player.FINDUS).getMana(), is(3));
       assertThat(game.getHero(Player.PEDDERSEN).getMana(), is(3));
     }
+
+    @Test
+    public void shouldHave2LessManaWhenDosIsPlayed () {
+        Card cardDos = game.getCardInHand(Player.FINDUS, 1);
+        game.playCard(Player.FINDUS, cardDos, 0);
+        assertThat(game.getHero(Player.FINDUS).getMana(), is(1));
+    }
 }
 
 

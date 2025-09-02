@@ -33,6 +33,10 @@ public interface Hero {
    *
    * @return the value of health
    */
+
+  // Is this addition to interface allowed???
+  void deductMana(int manaCost);
+
   int getHealth();
 
   /** Get the state of the Hero's ability to use
