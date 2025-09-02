@@ -146,4 +146,20 @@ public class TestAlphaStone {
         assertThat(game.getPlayerInTurn(), is(Player.PEDDERSEN));
     }
 
+    @Test
+    public void shouldBeBabyAsFindusHero(){
+        // Given a game
+        // When asking for Findus' hero
+        // Then it is baby
+        assertThat(game.getHero(Player.FINDUS).getType(), is(GameConstants.BABY_HERO_TYPE));
+    }
+
+    @Test
+    public void shouldBeBabyAsPeddersenHero(){
+        // Given a game
+        // When asking for Findus' hero
+        // Then it is baby
+        assertThat(game.getHero(Player.PEDDERSEN).getType(), is(GameConstants.BABY_HERO_TYPE));
+    }
+
 }

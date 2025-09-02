@@ -13,8 +13,8 @@ Game initialization:
 * When asking for Findus' hero description, it should return "Just Cute"
 * When asking for Findus' power, it should return "Cute"
 * Game starts with both heroes at 21 health
-* When game starts, Findus should have "Baby" as hero
-
+* [OK]When game starts, Findus should have "Baby" as hero
+* [OK] When game starts, Peddersen should have "Baby" as hero
 
 Cards:
 * Given Card Uno Then it has attributes (1,1,1)

@@ -47,6 +47,7 @@ public class StandardHotStoneGame implements Game {
 
     private int turnNumber = 0;
     private Map<Player, List <Card>> hands = new HashMap<>();
+    private Map <Player, Hero> heroes = new HashMap<>();
 
     public StandardHotStoneGame(){
 
@@ -57,6 +58,8 @@ public class StandardHotStoneGame implements Game {
             playerHand.add(new StandardCard(GameConstants.DOS_CARD));
             playerHand.add(new StandardCard(GameConstants.UNO_CARD));
             hands.put(p, playerHand);
+
+            heroes.put(p, new StandardHero());
         }
     }
 
@@ -72,7 +75,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Hero getHero(Player who) {
-    return null;
+        return heroes.get(who);
   }
 
   @Override
