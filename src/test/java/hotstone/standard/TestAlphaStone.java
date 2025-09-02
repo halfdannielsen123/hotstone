@@ -223,6 +223,12 @@ public class TestAlphaStone {
         assertThat(game.getCardInField(Player.FINDUS, 0), is(cardDos));
         assertThat(game.getCardInField(Player.FINDUS, 1), is(cardUno));
     }
+
+    @Test
+    public void shouldReturn3ManaWhenAskingForPlayerHeroManaAtStart () {
+      assertThat(game.getHero(Player.FINDUS).getMana(), is(3));
+      assertThat(game.getHero(Player.PEDDERSEN).getMana(), is(3));
+    }
 }
 
 

@@ -6,19 +6,23 @@ import hotstone.framework.Player;
 public class StandardHero implements Hero {
 
     private String heroType;
+    private int health;
+    private int mana;
 
     public StandardHero(){
         this.heroType = GameConstants.BABY_HERO_TYPE;
+        this.health = 21;
+        this.mana = 3;
     }
 
     @Override
     public int getMana() {
-        return 0;
+        return mana;
     }
 
     @Override
     public int getHealth() {
-        return 21;
+        return health;
     }
 
     @Override
