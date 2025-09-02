@@ -172,4 +172,12 @@ public class TestAlphaStone {
     public void shouldReturnJustCuteWhenAskingForHeroEffectDescription() {
         assertThat(game.getHero(Player.FINDUS).getEffectDescription(), is(GameConstants.BABY_HERO_EFFECT_DESCRIPTION));
     }
+
+    @Test
+    public void shouldReturn1Mana1Health1AttackWhenAskingForCardUnoAttributes() {
+        Card cardUno = game.getCardInHand(Player.FINDUS, 2);
+        assertThat(cardUno.getManaCost(), is(1));
+        assertThat(cardUno.getAttack(), is(1));
+        assertThat(cardUno.getHealth(), is(1));
+    }
 }

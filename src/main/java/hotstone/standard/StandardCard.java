@@ -7,9 +7,15 @@ import hotstone.framework.Player;
 public class StandardCard implements Card {
 
     private String name;
+    private final int manaCost;
+    private final int attack;
+    private int health;
 
-    public StandardCard(String name){
+    public StandardCard(String name, int manaCost, int attack, int health){
         this.name = name;
+        this.manaCost = manaCost;
+        this.attack = attack;
+        this.health = health;
     }
 
     @Override
@@ -19,17 +25,17 @@ public class StandardCard implements Card {
 
     @Override
     public int getManaCost() {
-        return 0;
+        return manaCost;
     }
 
     @Override
     public int getAttack() {
-        return 0;
+        return attack;
     }
 
     @Override
     public int getHealth() {
-        return 0;
+        return health;
     }
 
     @Override

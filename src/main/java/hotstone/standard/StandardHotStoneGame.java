@@ -54,9 +54,9 @@ public class StandardHotStoneGame implements Game {
         // Because Player enum - for loop like following
         for (Player p : Player.values()) {
             List<Card> playerHand = new ArrayList<>();
-            playerHand.add(new StandardCard(GameConstants.TRES_CARD));
-            playerHand.add(new StandardCard(GameConstants.DOS_CARD));
-            playerHand.add(new StandardCard(GameConstants.UNO_CARD));
+            playerHand.add(new StandardCard(GameConstants.TRES_CARD, 3, 3, 3));
+            playerHand.add(new StandardCard(GameConstants.DOS_CARD, 2, 2, 2));
+            playerHand.add(new StandardCard(GameConstants.UNO_CARD, 1, 1, 1));
             hands.put(p, playerHand);
 
             heroes.put(p, new StandardHero());
