@@ -14,13 +14,14 @@ Game initialization:
 * [OK] Game starts with both heroes at 21 health
 * [OK]When game starts, Findus should have "Baby" as hero
 * [OK] When game starts, Peddersen should have "Baby" as hero
+* [] When game starts, Findus should have Decksize 4
 
 Cards:
 * [OK] Given Card Uno Then it has attributes (1,1,1)
 * [OK] Given Card Dos Then it has attributes (2,2,2)
 
-Drawing:
-* Findus draws card Cuatro by beginning of round 2
+Drawing and deck:
+* [] Findus draws card Cuatro by beginning of round 2
 * Findus draws card Cinco by beginning of round 3
 * Findus draws card Seis by beginning of round 4
 * Findus draws card Siete by beginning of round 5
@@ -37,7 +38,6 @@ Playing cards:
 * [OK] Given a game When Findus plays Uno at index 0, Then it is allowed (Status.OK), and Then minion Uno appears at index 0 on the player's own field.
 * [OK] Given a game When Findus plays Uno at index 0, then it should be removed from Findus' hand at handSize should be 2.
 * [OK] Given a game When Findus plays Uno at index 0, then Dos at index 0 then Dos appears at index 0 and Uno moves to index 1 on the player's own field.
-* 
 * When Findus plays a card, then it becomes active after one round
 * When Findus plays a card, Then Peddersen still has 3 cards in his hand.
 * When Findus has played a card at index 0, and in next turn tries to play another card at index 0, then it is not allowed. He has to play it in another index on the table

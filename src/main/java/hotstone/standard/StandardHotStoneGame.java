@@ -49,6 +49,7 @@ public class StandardHotStoneGame implements Game {
     private Map<Player, List <Card>> hands = new HashMap<>();
     private Map <Player, Hero> heroes = new HashMap<>();
     private Map <Player, List <Card>> fields = new HashMap<>();
+    private Map<Player, ArrayDeque<Card>> decks = new HashMap<>();
 
     public StandardHotStoneGame(){
 
@@ -60,8 +61,15 @@ public class StandardHotStoneGame implements Game {
             playerHand.add(new StandardCard(GameConstants.UNO_CARD, 1, 1, 1));
             hands.put(p, playerHand);
 
-            heroes.put(p, new StandardHero());
-            fields.put(p, new ArrayList<>());
+            ArrayDeque<Card> deck = new ArrayDeque<>();
+            deck.push(new StandardCard(GameConstants.SIETE_CARD, 3,2,4));
+            deck.push(new StandardCard(GameConstants.SEIS_CARD, 2,1,3));
+            deck.push(new StandardCard(GameConstants.CINCO_CARD, 3,5,1));
+            deck.push(new StandardCard(GameConstants.CUATRO_CARD, 2,3,1));
+            decks.put(p, deck);
+
+            heroes.put(p, new StandardHero()); // add Hero to both players
+            fields.put(p, new ArrayList<>()); // make field for each player
         }
     }
 
@@ -92,10 +100,9 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public int getDeckSize(Player who) {
-    return 0;
+      ArrayDeque<Card> playerDeck = decks.get(who); // Get the deque
+      return playerDeck.size();
   }
-
-
 
   @Override
   public Card getCardInHand(Player who, int indexInHand) {

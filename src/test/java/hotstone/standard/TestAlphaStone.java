@@ -236,6 +236,27 @@ public class TestAlphaStone {
         game.playCard(Player.FINDUS, cardDos, 0);
         assertThat(game.getHero(Player.FINDUS).getMana(), is(1));
     }
+
+    @Test
+    public void shouldHaveDeckSize4AtGameInitializationForFindus(){
+        // given a game
+        // When asking for Findus' deck size
+        // Then it should return 4
+        assertThat(game.getDeckSize(Player.FINDUS), is(4));
+    }
+
+   /* @Test
+    public void shouldDrawQuatroAtRound2ForFindus(){
+        // Given a game, where Findus has yet not played a card
+        game.endTurn(); // Findus
+        game.endTurn(); // Peddersen
+        // When Findus begins round 2
+        // Then turnnumber is two, he has 4 cards and Cuatro is at index 0
+        assertThat(game.getTurnNumber(), is(2));
+        Card card0 = game.getCardInHand(Player.FINDUS, 0);
+        assertThat(game.getHandSize(Player.FINDUS), is(4));
+        assertThat(card0.getName(), is(GameConstants.CUATRO_CARD));
+    }*/
 }
 
 

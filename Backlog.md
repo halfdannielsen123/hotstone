@@ -1,7 +1,10 @@
 Backlog for AlphaStone
 ====
 
-* Lave deck som en stack fra uno til sinco.
+* Skriv evt. deck op med 7 kort til at starte med, og lad spillerne trække uno, dos, dres i starten
+* Inkludere manacost osv. under Gameconstants og ikke under StandardGame.
 
-Spørgsmål til Felix
-* Skal kortenes attributer(manacost, attack, health) defineres under GameConstants?
+# Backlog til senere versioner
+
+* Hvis der er flere af samme kort på hånden, skal vi sikre at de ikke begge bliver fjernet, når kortet spilles.
+* Lave god opsætning med Hero-Effect-Effect Description som hænger logisk sammen
