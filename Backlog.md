@@ -8,3 +8,5 @@ Backlog for AlphaStone
 
 * Hvis der er flere af samme kort på hånden, skal vi sikre at de ikke begge bliver fjernet, når kortet spilles.
 * Lave god opsætning med Hero-Effect-Effect Description som hænger logisk sammen
+* "When the deck is exhausted and no more cards can be drawn, the hero suffers a two
+  health penalty per failed draw. This way, a game can never go on indefintely."

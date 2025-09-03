@@ -245,18 +245,31 @@ public class TestAlphaStone {
         assertThat(game.getDeckSize(Player.FINDUS), is(4));
     }
 
-   /* @Test
+    @Test
     public void shouldDrawQuatroAtRound2ForFindus(){
         // Given a game, where Findus has yet not played a card
+        // When Findus has not played any card and begins round 2
         game.endTurn(); // Findus
         game.endTurn(); // Peddersen
-        // When Findus begins round 2
         // Then turnnumber is two, he has 4 cards and Cuatro is at index 0
         assertThat(game.getTurnNumber(), is(2));
         Card card0 = game.getCardInHand(Player.FINDUS, 0);
         assertThat(game.getHandSize(Player.FINDUS), is(4));
         assertThat(card0.getName(), is(GameConstants.CUATRO_CARD));
-    }*/
+    }
+
+    @Test
+    public void shouldDrawSieteAtRound8ForFindus(){
+        // Given a game, where Findus has yet not played a card
+        // When Findus has not played any card and begins round 8
+        for (int i = 0; i<8; i++) {
+            game.endTurn();
+        }
+        assertThat(game.getTurnNumber(), is(8));
+        // Then card SIETE is at index 0
+        Card card0 = game.getCardInHand(Player.FINDUS, 0);
+        assertThat(card0.getName(), is(GameConstants.SIETE_CARD));
+    }
 }
 
 

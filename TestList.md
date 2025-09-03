@@ -14,18 +14,15 @@ Game initialization:
 * [OK] Game starts with both heroes at 21 health
 * [OK]When game starts, Findus should have "Baby" as hero
 * [OK] When game starts, Peddersen should have "Baby" as hero
-* [] When game starts, Findus should have Decksize 4
+* [OK] When game starts, Findus should have Decksize 4
 
 Cards:
 * [OK] Given Card Uno Then it has attributes (1,1,1)
 * [OK] Given Card Dos Then it has attributes (2,2,2)
 
-Drawing and deck:
-* [] Findus draws card Cuatro by beginning of round 2
-* Findus draws card Cinco by beginning of round 3
-* Findus draws card Seis by beginning of round 4
-* Findus draws card Siete by beginning of round 5
-* When Findus does not play any card in round 0, he has 4 cards in his hand in round 2
+Drawing:
+* [OK] When Findus does not play any card in round 0, he has 4 cards and draws card Cuatro by beginning of round 2
+* [OK] Findus draws card Siete by beginning of round 8
 
 Mana:
 * When Findus tries to play both Dos and Tres in round 1, he is not allowed since he's out of mana

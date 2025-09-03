@@ -139,7 +139,10 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public void endTurn() {
-        turnNumber += 1;
+      turnNumber += 1;
+      Player p = getPlayerInTurn();
+      // add top card from deck to hand's index 0
+      hands.get(p).add(0, decks.get(p).pop());
   }
 
   @Override
