@@ -253,8 +253,8 @@ public class TestAlphaStone {
         game.endTurn(); // Peddersen
         // Then turnnumber is two, he has 4 cards and Cuatro is at index 0
         assertThat(game.getTurnNumber(), is(2));
-        Card card0 = game.getCardInHand(Player.FINDUS, 0);
         assertThat(game.getHandSize(Player.FINDUS), is(4));
+        Card card0 = game.getCardInHand(Player.FINDUS, 0);
         assertThat(card0.getName(), is(GameConstants.CUATRO_CARD));
     }
 
