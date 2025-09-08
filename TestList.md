@@ -57,7 +57,7 @@ Attacks:
 
 Power:
 * [OK] When Findus plays his power in turn 0, status OK is returned and his mana drops 2.
-* [] When Findus plays his power in turn 0, and then tries to play it again, POWER_USE_NOT_ALLOWED_TWICE_PR_ROUND is returned
+* [OK] When Findus plays his power in turn 0, and then tries to play it again, POWER_USE_NOT_ALLOWED_TWICE_PR_ROUND is returned
 
 End of game:
 * Player Findus wins after 4 rounds (that is, each of the two players have 4 turns completed, after which Findus is winner at the start of turn number 8).
