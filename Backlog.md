@@ -3,7 +3,7 @@ Backlog for AlphaStone
 
 * Skriv evt. deck op med 7 kort til at starte med, og lad spillerne trække uno, dos, dres i starten
 * Inkludere manacost osv. under Gameconstants og ikke under StandardGame.
-* Sørge for at vores DeductMana mm. ikke fucker med interface
+* Sørge for at vores DeductMana plus setPowerUsedThisTurn ikke fucker med interface
 
 # Backlog til senere versioner
 
