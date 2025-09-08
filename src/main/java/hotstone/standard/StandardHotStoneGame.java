@@ -147,6 +147,10 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Status playCard(Player who, Card card, int atIndex) {
+        int manaCost = card.getManaCost();
+        Hero playerHero = getHero(who);
+        int heroMana = playerHero.getMana();
+        if (heroMana < manaCost) {return Status.NOT_ENOUGH_MANA;}
         // Add the card to the player's field
         List <Card> playerField = fields.get(who);
         playerField.add(atIndex, card);
@@ -154,8 +158,7 @@ public class StandardHotStoneGame implements Game {
         List <Card> playerHand = hands.get(who);
         playerHand.remove(card);
         // Deduct manaCost from Hero's mana
-        Hero playerHero = getHero(who);
-        playerHero.deductMana(card.getManaCost());
+        playerHero.deductMana(manaCost);
         return Status.OK;
   }
 

@@ -270,6 +270,20 @@ public class TestAlphaStone {
         Card card0 = game.getCardInHand(Player.FINDUS, 0);
         assertThat(card0.getName(), is(GameConstants.SIETE_CARD));
     }
+
+    @Test
+    public void shouldReturnStatusNOT_ENOUGH_MANAWhenDosAndTresPlayedInRoundOne () {
+      // When Findus plays card Dos
+      Card cardDos = game.getCardInHand(Player.FINDUS, 1);
+      Status firstStatus = game.playCard(Player.FINDUS, cardDos, 0);
+      // Then the status should be OK
+      assertThat(firstStatus, is(Status.OK));
+      // But when Tres also played in round 1
+      Card cardTres = game.getCardInHand(Player.FINDUS, 0);
+      Status secondStatus = game.playCard(Player.FINDUS, cardTres, 0);
+      // Then Status returned should be NOT ENOUGH MANA
+      assertThat(secondStatus, is(Status.NOT_ENOUGH_MANA));
+    }
 }
 
 
