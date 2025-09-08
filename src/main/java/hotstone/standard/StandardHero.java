@@ -8,6 +8,7 @@ public class StandardHero implements Hero {
     private String heroType;
     private int health;
     private int mana;
+    private boolean usedPowerThisTurn;
 
     public StandardHero(){
         this.heroType = GameConstants.BABY_HERO_TYPE;
@@ -32,7 +33,11 @@ public class StandardHero implements Hero {
 
     @Override
     public boolean canUsePower() {
-        return false;
+        return !usedPowerThisTurn;
+    }
+
+    public void setPowerUsedThisTurn(boolean used) {
+        this.usedPowerThisTurn = used;
     }
 
     @Override

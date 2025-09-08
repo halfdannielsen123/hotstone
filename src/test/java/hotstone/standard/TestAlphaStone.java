@@ -304,6 +304,14 @@ public class TestAlphaStone {
         Status status = game.usePower(Player.FINDUS);
         assertThat(status, is(Status.NOT_ENOUGH_MANA));
     }
+
+    @Test
+    public void shouldReturnPOWER_USE_NOT_ALLOWED_TWICE_PR_ROUND () {
+      Status firstStatus = game.usePower(Player.FINDUS);
+      assertThat(firstStatus, is(Status.OK));
+      Status secondStatus = game.usePower(Player.FINDUS);
+      assertThat(secondStatus, is(Status.POWER_USE_NOT_ALLOWED_TWICE_PR_ROUND));
+    }
 }
 
 
