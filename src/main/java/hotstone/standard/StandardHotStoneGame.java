@@ -174,6 +174,8 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Status usePower(Player who) {
-    return null;
+        Hero playerHero = getHero(who);
+        playerHero.deductMana(2); // fake it
+        return Status.OK; // fake it
   }
 }

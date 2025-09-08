@@ -284,6 +284,15 @@ public class TestAlphaStone {
       // Then Status returned should be NOT ENOUGH MANA
       assertThat(secondStatus, is(Status.NOT_ENOUGH_MANA));
     }
+
+    @Test
+    public void shouldReturnStatusOKAndManaDrops2WhenFindusUsesPowerInRound0 () {
+        //Given a game, when Findus uses power;
+        Status status = game.usePower(Player.FINDUS);
+        // Then it returns ok and his mana drops 2
+        assertThat(status, is(Status.OK));
+        assertThat(game.getHero(Player.FINDUS).getMana(), is(1));
+    }
 }
 
 
