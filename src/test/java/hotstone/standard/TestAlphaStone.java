@@ -319,6 +319,12 @@ public class TestAlphaStone {
       Status status = game.playCard(Player.PEDDERSEN, cardTres, 0);
       assertThat(status, is(Status.NOT_PLAYER_IN_TURN));
     }
+
+    @Test
+    public void shouldReturnNOT_PLAYER_IN_TURNWhenPeddersenUsesPowerInTurn0 () {
+      Status status = game.usePower(Player.PEDDERSEN);
+      assertThat(status, is(Status.NOT_PLAYER_IN_TURN));
+    }
 }
 
 

@@ -177,6 +177,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Status usePower(Player who) {
+        if (who != getPlayerInTurn()) {return Status.NOT_PLAYER_IN_TURN;}
         Hero playerHero = getHero(who);
         if (!playerHero.canUsePower()) {return Status.POWER_USE_NOT_ALLOWED_TWICE_PR_ROUND;}
         int manaCost = GameConstants.HERO_POWER_COST;

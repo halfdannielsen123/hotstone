@@ -26,7 +26,7 @@ Drawing:
 
 Turns:
 * [OK] When Peddersen tries to play UNO at index 0 in turn 0, NOT_PLAYER_IN_TURN is returned
-* When Peddersen tries to use his power in turn 0, NOT_PLAYER_IN_TURN is returned
+* [OK] When Peddersen tries to use his power in turn 0, NOT_PLAYER_IN_TURN is returned
 
 Mana:
 * [OK] When Findus tries to play both Dos and Tres in round 1, he is not allowed since he's out of mana
