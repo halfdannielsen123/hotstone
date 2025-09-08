@@ -175,6 +175,9 @@ public class StandardHotStoneGame implements Game {
   @Override
   public Status usePower(Player who) {
         Hero playerHero = getHero(who);
+        int manaCost = GameConstants.HERO_POWER_COST;
+        int heroMana = playerHero.getMana();
+        if (heroMana < manaCost) {return Status.NOT_ENOUGH_MANA;}
         playerHero.deductMana(2); // fake it
         return Status.OK; // fake it
   }

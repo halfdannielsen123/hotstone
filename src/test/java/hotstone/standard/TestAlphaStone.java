@@ -293,6 +293,17 @@ public class TestAlphaStone {
         assertThat(status, is(Status.OK));
         assertThat(game.getHero(Player.FINDUS).getMana(), is(1));
     }
+
+    @Test
+    public void shouldReturnNOTENOUGHMANAForFindusWhenPlayingTresAndThenUsingPower() {
+        // given a game where Findus plays Tres
+        Card cardTres = game.getCardInHand(Player.FINDUS, 0);
+        game.playCard(Player.FINDUS, cardTres, 0);
+        // when he tries to use Power
+        // Then NOT_ENOUGH_MANA is returned
+        Status status = game.usePower(Player.FINDUS);
+        assertThat(status, is(Status.NOT_ENOUGH_MANA));
+    }
 }
 
 

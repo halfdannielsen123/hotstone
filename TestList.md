@@ -31,7 +31,7 @@ Turns:
 Mana:
 * [OK] When Findus tries to play both Dos and Tres in round 1, he is not allowed since he's out of mana
 * [OK] When Peddersen plays Dos, Then the mana available is two less.
-* [] When Findus plays card Tres in round 0 and then uses Power, NOT_ENOUGH_MANA is returned
+* [OK] When Findus plays card Tres in round 0 and then uses Power, NOT_ENOUGH_MANA is returned
 * When Findus plays Uno in round 0, in beginning of round 2, he should have 3 mana
 * [OK]Findus should have 3 mana in the beginning of round 1-4.
 
