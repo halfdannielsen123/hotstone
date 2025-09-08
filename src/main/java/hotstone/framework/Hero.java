@@ -39,6 +39,8 @@ public interface Hero {
 
   void setPowerUsedThisTurn(boolean used);
 
+  void setMana(int mana);
+
   int getHealth();
 
   /** Get the state of the Hero's ability to use

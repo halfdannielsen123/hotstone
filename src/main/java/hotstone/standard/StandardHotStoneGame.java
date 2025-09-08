@@ -145,6 +145,7 @@ public class StandardHotStoneGame implements Game {
       // add top card from deck to hand's index 0
       hands.get(p).add(0, decks.get(p).pop());
       hero.setPowerUsedThisTurn(false);
+      hero.setMana(3);
   }
 
   @Override

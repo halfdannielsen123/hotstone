@@ -30,9 +30,7 @@ package hotstone.standard;
  *      Aarhus University
  */
 
-import hotstone.framework.Card;
-import hotstone.framework.Player;
-import hotstone.framework.Status;
+import hotstone.framework.*;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
@@ -42,8 +40,6 @@ import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import utility.TestHelper;
-
-import hotstone.framework.Game;
 
 /** Template for your own ongoing TDD process.
  * Fill it out until you have covered all
@@ -324,6 +320,16 @@ public class TestAlphaStone {
     public void shouldReturnNOT_PLAYER_IN_TURNWhenPeddersenUsesPowerInTurn0 () {
       Status status = game.usePower(Player.PEDDERSEN);
       assertThat(status, is(Status.NOT_PLAYER_IN_TURN));
+    }
+
+    @Test
+    public void shouldResetManaAtEndOfTurn() {
+      Card cardUno = game.getCardInHand(Player.FINDUS, 2);
+      Status status = game.playCard(Player.FINDUS, cardUno, 0);
+      game.endTurn();
+      game.endTurn();
+      Hero hero = game.getHero(Player.FINDUS);
+      assertThat(hero.getMana(), is(3));
     }
 }
 

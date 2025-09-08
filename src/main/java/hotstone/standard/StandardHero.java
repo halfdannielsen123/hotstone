@@ -26,6 +26,10 @@ public class StandardHero implements Hero {
         mana -= manaCost;
     }
 
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
     @Override
     public int getHealth() {
         return health;
