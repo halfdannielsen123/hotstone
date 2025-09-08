@@ -142,10 +142,11 @@ public class StandardHotStoneGame implements Game {
       turnNumber += 1;
       Player p = getPlayerInTurn();
       Hero hero = getHero(p);
+      StandardHero asStdHero = (StandardHero) hero;
       // add top card from deck to hand's index 0
       hands.get(p).add(0, decks.get(p).pop());
-      hero.setPowerUsedThisTurn(false);
-      hero.setMana(3);
+      asStdHero.setPowerUsedThisTurn(false);
+      asStdHero.setMana(3);
   }
 
   @Override
@@ -153,6 +154,7 @@ public class StandardHotStoneGame implements Game {
         if (who != getPlayerInTurn()) {return Status.NOT_PLAYER_IN_TURN;}
         int manaCost = card.getManaCost();
         Hero playerHero = getHero(who);
+        StandardHero asStdHero = (StandardHero) playerHero;
         int heroMana = playerHero.getMana();
         if (heroMana < manaCost) {return Status.NOT_ENOUGH_MANA;}
         // Add the card to the player's field
@@ -162,7 +164,7 @@ public class StandardHotStoneGame implements Game {
         List <Card> playerHand = hands.get(who);
         playerHand.remove(card);
         // Deduct manaCost from Hero's mana
-        playerHero.deductMana(manaCost);
+        asStdHero.deductMana(manaCost);
         return Status.OK;
   }
 
@@ -180,12 +182,13 @@ public class StandardHotStoneGame implements Game {
   public Status usePower(Player who) {
         if (who != getPlayerInTurn()) {return Status.NOT_PLAYER_IN_TURN;}
         Hero playerHero = getHero(who);
+        StandardHero asStdHero = (StandardHero) playerHero;
         if (!playerHero.canUsePower()) {return Status.POWER_USE_NOT_ALLOWED_TWICE_PR_ROUND;}
         int manaCost = GameConstants.HERO_POWER_COST;
         int heroMana = playerHero.getMana();
         if (heroMana < manaCost) {return Status.NOT_ENOUGH_MANA;}
-        playerHero.deductMana(2); // fake it
-        playerHero.setPowerUsedThisTurn(true);
+        asStdHero.deductMana(2); // fake it
+        asStdHero.setPowerUsedThisTurn(true);
         return Status.OK; // fake it
   }
 }
