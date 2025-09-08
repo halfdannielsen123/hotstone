@@ -10,3 +10,5 @@ Backlog for AlphaStone
 * Lave god opsætning med Hero-Effect-Effect Description som hænger logisk sammen
 * "When the deck is exhausted and no more cards can be drawn, the hero suffers a two
   health penalty per failed draw. This way, a game can never go on indefintely."
+* Implementer ATTACK_NOT_ALLOWED_ON_NON_TAUNT_MINION i ThetaStone
+
