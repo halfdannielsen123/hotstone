@@ -25,7 +25,7 @@ Drawing:
 * [OK] Findus draws card Siete by beginning of round 8
 
 Turns:
-* When Peddersen tries to play UNO at index 0 in turn 0, NOT_PLAYER_IN_TURN is returned
+* [OK] When Peddersen tries to play UNO at index 0 in turn 0, NOT_PLAYER_IN_TURN is returned
 * When Peddersen tries to use his power in turn 0, NOT_PLAYER_IN_TURN is returned
 
 Mana:

@@ -149,6 +149,7 @@ public class StandardHotStoneGame implements Game {
 
   @Override
   public Status playCard(Player who, Card card, int atIndex) {
+        if (who != getPlayerInTurn()) {return Status.NOT_PLAYER_IN_TURN;}
         int manaCost = card.getManaCost();
         Hero playerHero = getHero(who);
         int heroMana = playerHero.getMana();

@@ -312,6 +312,13 @@ public class TestAlphaStone {
       Status secondStatus = game.usePower(Player.FINDUS);
       assertThat(secondStatus, is(Status.POWER_USE_NOT_ALLOWED_TWICE_PR_ROUND));
     }
+
+    @Test
+    public void shouldReturnNOT_PLAYER_IN_TURNWhenPeddersenPlaysCardInTurn0 () {
+      Card cardTres = game.getCardInHand(Player.PEDDERSEN, 0);
+      Status status = game.playCard(Player.PEDDERSEN, cardTres, 0);
+      assertThat(status, is(Status.NOT_PLAYER_IN_TURN));
+    }
 }
 
 
