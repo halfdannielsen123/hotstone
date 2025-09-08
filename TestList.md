@@ -24,6 +24,10 @@ Drawing:
 * [OK] When Findus does not play any card in round 0, he has 4 cards and draws card Cuatro by beginning of round 2
 * [OK] Findus draws card Siete by beginning of round 8
 
+Turns:
+* When Peddersen tries to play UNO at index 0 in turn 0, NOT_PLAYER_IN_TURN is returned
+* When Peddersen tries to use his power in turn 0, NOT_PLAYER_IN_TURN is returned
+
 Mana:
 * [OK] When Findus tries to play both Dos and Tres in round 1, he is not allowed since he's out of mana
 * [OK] When Peddersen plays Dos, Then the mana available is two less.
@@ -44,10 +48,15 @@ Attacks:
 * When Findus’ Dos (2,2) attacks Peddersen’s Dos (2,2), Both cards should be removed.
 * When Findus tries to attack Peddersen's hero with a non-active card, he's not allowed
 * When Findus tries to attack a card on index 0 with a non-active card, he's not allowed
+* When Peddersen tries to attack with one of Findus' cards, NOT_OWNER returned.
 * When Findus tries to attack a card on Peddersen's index 0, nothing happens if there is no card at index 0
 * When Findus attacks Peddersen with Card Uno, Peddersen's health drops with one
 * When Findus attacks Peddersen's hero with Card Uno, it becomes inactive
 * A minion can only attack once per turn
+* When Findus plays UNO and DOS in round 0, and in round 2 tries to attack his own UNO with DOS, ATTACK_NOT_ALLOWED_ON_OWN_MINION is returned.
+
+Power:
+* When Findus plays his power in turn 0, and then tries to play it again, POWER_USE_NOT_ALLOWED_TWICE_PR_ROUND is returned
 
 End of game:
 * Player Findus wins after 4 rounds (that is, each of the two players have 4 turns completed, after which Findus is winner at the start of turn number 8).
